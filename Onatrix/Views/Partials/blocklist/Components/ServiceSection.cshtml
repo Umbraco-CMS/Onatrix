@@ -1,0 +1,47 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ServiceSection)Model.Content;
+    var settings = Model.Settings as ContentModels.ServiceSettings;
+
+    var current = Umbraco.AssignedContentItem;
+    var siteRoot = current.Root();
+
+    var servicePage = siteRoot?.Children<ServicePage>()?.FirstOrDefault();
+    var items = servicePage?.Children<ServiceDetail>()?.OrderByDescending(x => x.CreateDate).ToList() ?? [];
+}
+
+<section id="service-section">
+    <div class="container">
+        <div class="">
+            @if (settings!.ShowServiceLabel)
+            {
+               <h2>@content.Label</h2>
+              
+            }
+            <div>@Html.Raw(content.Title)</div>
+        </div>
+        <div class="">
+             @if (items.Any())
+            {
+                @foreach (var item in items)
+                {
+                    <div class="service-item">
+                        <a class="link" href="@item.Url()">
+                            <h4>@item.Name</h4>
+                            @if(item.SeviceDetailThumbnail != null)
+                            {
+                                 <img src="@item.SeviceDetailThumbnail.Url()" alt="Service Image">
+                            }
+                            <p>@item.Excerpt</p>
+                        </a>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>No services available at the moment.</p>
+            }
+        </div>
+    </div>
+</section>

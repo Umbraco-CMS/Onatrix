@@ -1,0 +1,48 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<IPageHeader>
+
+@using Umbraco.Cms.Core.PublishedCache
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Cms.Core.Services.Navigation
+
+@inject IPublishedContentCache PublishedContentCache
+@inject IDocumentNavigationQueryService DocumentNavigationQueryService
+@inject IPublishedUrlProvider PublishedUrlProvider
+
+
+@{
+    var selection = Model.Ancestors().ToArray(); 
+    var homePageDisplayName = "Home";
+    var isFristItem = true;
+}
+
+<section id="pageHeader">
+    <div class="container">
+    @if (Model.BgImageleft != null)
+        {
+            <img  src="@Model.BgImageleft.Url()" alt="background image">
+        }
+            <h1>@Model.PageTitle</h1>
+    @if (Model.BgImageright != null)
+        {
+            <img src="@Model.BgImageright.Url()" alt="background image">
+        }
+        <div class="breadcrumb">
+            @if (selection?.Length > 0)
+            {
+                <ul class="">
+                    @foreach (var item in selection.OrderBy(x => x.Level))
+                    {
+                        var displyName = isFristItem ? homePageDisplayName : item.Name;
+                        <li>
+                            <a href="@item.Url(PublishedUrlProvider)">@displyName</a>
+                            <i class="fa-solid fa-angle-right icon"></i>
+                        </li>
+                        isFristItem = false;
+                    }
+                    <li class="active">@Model.Name</li>
+                </ul>
+            }
+
+        </div>
+    </div>
+</section>
