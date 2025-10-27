@@ -50,12 +50,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Detail Body
+		/// Body
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("detailBody")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel DetailBody => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "detailBody");
+		[ImplementPropertyType("body")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel Body => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "body");
 
 		///<summary>
 		/// Excerpt

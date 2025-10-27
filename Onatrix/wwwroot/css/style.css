@@ -379,3 +379,36 @@ p {
 .link {
     text-decoration: none;
 }
+
+/* service section */
+#service-section .container {
+
+    gap: 0.5rem;
+    width: 100%;
+}
+
+#service-section .content {
+
+    width: 70%;
+    margin-bottom: 3rem;
+    padding: 0 10rem;
+}
+
+
+
+
+
+
+
+#service-detail .container {
+    gap: 0.5rem;
+    width: 100%;
+}
+
+#service-detail .content {
+    width: 70%;
+    margin-bottom: 3rem;
+    padding: 0 10rem;
+}
+
+

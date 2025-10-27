@@ -12,9 +12,9 @@
             <aside class="service-detail-aside">
 				@Html.GetBlockListHtml(Model.ServiceDetailAsides)
 			</aside>
-
-			<div> </div>
-			<div>@Html.Raw(Model.DetailBody)</div>
+			<div class="content">
+				@Html.GetBlockListHtml(Model.Body)
+			</div>
 		</div>
 	</div>
 </section>
