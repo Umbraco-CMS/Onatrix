@@ -1,0 +1,44 @@
+﻿@using Onatrix.ViewModels;
+@model CallbackFormViewModel
+
+@using (Html.BeginUmbracoForm("HandleCallbackForm", "Form", FormMethod.Post, new { novalidate = "novaidate", id = "CallbackForm" }))
+{
+     <div class="mini-form">
+        <div>
+            <label asp-for="Name" class="sr-only"></label>
+            <input asp-for="Name" class="input-form" type="text" placeholder=" @Html.DisplayNameFor( x => x.Name)" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+         </div>
+
+        <div>
+            <label asp-for="Email" class="sr-only"></label>
+            <input asp-for="Email" class="input-form" type="text" placeholder=" @Html.DisplayNameFor(x => x.Email)" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="Phone" class="sr-only"></label>
+            <input asp-for="Phone" class="input-form" type="text" placeholder=" @Html.DisplayNameFor(x => x.Phone)" />
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="SelectedOption" class="sr-only"></label>
+
+            <select asp-for="SelectedOption" class="input-form" >
+                 <option value="" disabled hidden selected>Please select an option</option>
+                @foreach (var option in Model.Options)
+                {
+                    <option value="@option">@option</option>
+                }
+            </select>
+
+            <span></span>
+
+            <span asp-validation-for="SelectedOption" class="text-danger"></span>
+        </div>
+        <div>  
+            <button type="submit" class="btn btn-secondry">Submit</button>
+        </div>
+     </div>
+}
