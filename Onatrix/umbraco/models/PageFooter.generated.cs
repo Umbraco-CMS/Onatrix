@@ -18,14 +18,29 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Projects</summary>
-	[PublishedModel("projects")]
-	public partial class Projects : PublishedContentModel, IPageFooter, IPageHeader
+	// Mixin Content Type with alias "pageFooter"
+	/// <summary>Page Footer</summary>
+	public partial interface IPageFooter : IPublishedContent
+	{
+		/// <summary>Copyright</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		string FooterCopyright { get; }
+
+		/// <summary>Text</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		string FooterText { get; }
+	}
+
+	/// <summary>Page Footer</summary>
+	[PublishedModel("pageFooter")]
+	public partial class PageFooter : PublishedContentModel, IPageFooter
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
-		public new const string ModelTypeAlias = "projects";
+		public new const string ModelTypeAlias = "pageFooter";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
@@ -34,14 +49,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 			=> PublishedModelUtility.GetModelContentType(contentTypeCache, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<Projects, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<PageFooter, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(contentTypeCache), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public Projects(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+		public PageFooter(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -50,20 +65,17 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Title
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("projectName")]
-		public virtual string ProjectName => this.Value<string>(_publishedValueFallback, "projectName");
-
-		///<summary>
 		/// Copyright
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("footerCopyright")]
-		public virtual string FooterCopyright => global::Umbraco.Cms.Web.Common.PublishedModels.PageFooter.GetFooterCopyright(this, _publishedValueFallback);
+		public virtual string FooterCopyright => GetFooterCopyright(this, _publishedValueFallback);
+
+		/// <summary>Static getter for Copyright</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static string GetFooterCopyright(IPageFooter that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "footerCopyright");
 
 		///<summary>
 		/// Text
@@ -71,30 +83,11 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("footerText")]
-		public virtual string FooterText => global::Umbraco.Cms.Web.Common.PublishedModels.PageFooter.GetFooterText(this, _publishedValueFallback);
+		public virtual string FooterText => GetFooterText(this, _publishedValueFallback);
 
-		///<summary>
-		/// BgImageleft
-		///</summary>
+		/// <summary>Static getter for Text</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("bgImageleft")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops BgImageleft => global::Umbraco.Cms.Web.Common.PublishedModels.PageHeader.GetBgImageleft(this, _publishedValueFallback);
-
-		///<summary>
-		/// BgImageright
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("bgImageright")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops BgImageright => global::Umbraco.Cms.Web.Common.PublishedModels.PageHeader.GetBgImageright(this, _publishedValueFallback);
-
-		///<summary>
-		/// Page Title
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("pageTitle")]
-		public virtual string PageTitle => global::Umbraco.Cms.Web.Common.PublishedModels.PageHeader.GetPageTitle(this, _publishedValueFallback);
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static string GetFooterText(IPageFooter that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "footerText");
 	}
 }

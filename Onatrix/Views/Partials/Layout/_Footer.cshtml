@@ -1,0 +1,13 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    var settings = Umbraco.ContentAtRoot().FirstOrDefault(x => x.ContentType.Alias == "pageFooter");
+    var footerCopyright = settings?.Value("footerCopyright");
+    var footerText = settings?.Value("footerText");
+}
+<footer>
+    <div class="footer">
+        <p>@footerCopyright</p>
+        <p class="footer-p">@footerText</p>
+    </div>
+</footer>
