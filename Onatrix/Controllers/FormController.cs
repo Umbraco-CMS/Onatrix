@@ -15,7 +15,7 @@ public class FormController(IUmbracoContextAccessor umbracoContextAccessor, IUmb
 {
     private readonly FormSubmissionsService _formSubmissions = formSubmissions;
 
-    public IActionResult HandleCallbackForm(CallbackFormViewModel model)
+    public async Task<IActionResult> HandleCallbackForm(CallbackFormViewModel model)
     {
         if (!ModelState.IsValid)
         {
@@ -27,7 +27,7 @@ public class FormController(IUmbracoContextAccessor umbracoContextAccessor, IUmb
            TempData["FormError"] = "There was an error submitting your request. Please try again later.";
             return RedirectToCurrentUmbracoPage();
         }
-
+        await _formSubmissions.SendConfirmationEmailAsync(model.Email, model.Name);
         TempData["FormSuccess"] = "Your callback request has been submitted successfully.";
         return RedirectToCurrentUmbracoPage();
     }
