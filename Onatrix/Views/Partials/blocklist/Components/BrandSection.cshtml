@@ -1,0 +1,46 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.BrandSection)Model.Content;
+}
+
+<section id="brands">
+    <div class="container">
+        <div id="brand-1" class="brand-box">
+            @if (content.Brand1 != null)
+            {
+                <img src="@content.Brand1.Url()" alt="Brand-1">
+            }
+        </div>
+        <div id="brand-2" class="brand-box">
+            @if (content.Brand2 != null)
+            {
+                <img src="@content.Brand2.Url()" alt="Brand-2">
+            }
+        </div>
+        <div id="brand-3" class="brand-box">
+            @if (content.Brand3 != null)
+            {
+                <img src="@content.Brand3.Url()" alt="Brand-3">
+            }
+        </div>
+        <div id="brand-4" class="brand-box">
+            @if (content.Brand4 != null)
+            {
+                <img src="@content.Brand4.Url()" alt="Brand-4">
+            }
+        </div>
+        <div id="brand-5" class="brand-box">
+            @if (content.Brand5 != null)
+            {
+                <img src="@content.Brand5.Url()" alt="Brand-5">
+            }
+        </div>
+        <div id="brand-6" class="brand-box">
+            @if (content.Brand6 != null)
+            {
+                <img src="@content.Brand6.Url()" alt="Brand-6">
+            }
+        </div>
+    </div>
+</section>
