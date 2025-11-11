@@ -74,6 +74,7 @@ html, body {
     font-style: normal;
     color: var(--text-color);
     background-color: var(--bg-white-color);
+    min-height: 100vh;
 }
 
 /* typography */
@@ -129,12 +130,16 @@ a {
     }
 /* wrapper */
 .wrapper {
-    display: grid;
-    grid-template-rows: auto auto 1fr ;
-    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     gap: 0;
-    
 }
+
+.container {
+    width: 100%;
+}
+
 
 .top {
     border: 1px solid var(--border-color);
@@ -286,20 +291,26 @@ ul {
     color: var(--bg-main-color);
 }
 /*footer*/
+
 .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     padding: 0 10rem;
+    margin-top: auto;
     color: var(--body-color);
     background-color: var(--bg-dark-color);
     gap: 0.5rem;
     height: 60px;
     width: 100%;
+    z-index: 100;
 }
-.footer-p {
-    color: var(--sub-color-3);
-}
+    .footer > p {
+        color: var(--sub-color-3);
+    }
 
 /* Buttons */
 .btn {
@@ -394,7 +405,7 @@ ul {
             gap: 0.5rem;
             width: 90%;
         }
-        .container {
+        #hero-section .container {
             display: flex;
             flex-direction: column;
             position: relative;
@@ -492,6 +503,7 @@ ul {
     #brands {
         display: block;
         padding: 1rem 2rem;
+        margin: 1rem;
     }
     .container {
         display: flex;
@@ -501,6 +513,7 @@ ul {
         height: 100%;
         width: 70%;
         padding: 1rem;
+        margin: 1rem;
     }
     .brand-box {
         border: 1px solid var(--color-border-gray);
@@ -509,6 +522,7 @@ ul {
         display: flex;
         justify-content: center;
         align-items: center;
+        gap: 1rem;
     }
 }
     /* Brand section för desktop  */
@@ -712,46 +726,87 @@ ul {
     
 /* service section */
 #service-section {
-    width: 600PX;
+    background-color: var(--bg-secondery-color);
+    margin-bottom: 1rem;
     height: 100%;
 }
 
-.container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-    gap: 0.5rem;
-    width: 700PX;
-   
-    padding: 0 3rem;
+    #service-section .container {
+        gap: 0.5rem;
+        width: 600PX;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+.title {
+    text-align: center;
+    margin-bottom: 30px;
 }
-    .container > h6 {
-        padding: 3rem;
+#service-section h6 {
+    padding: 0.5rem 0;
+    color: var(--sub-color-3);
+    text-align: center;
+}
+    #service-section h3 span {
+        font-size: 18px;
+        font-weight: 700;
     }
 #service-section .content {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-    width: 90%;
-    height: 100%;
-    margin-bottom: 3rem;
-    padding: 3rem;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 1rem;
+    gap: 30px;
 }
-.service-item {
-    gap: 1rem;
-}
+    #service-section .service-item img {
+        width: 90%;
+        height: 180px;
+    }
 
 #service-section h4 {
-  font-size: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 15px 20px 10px;
+}
+.service-item {
+    border-radius: 8px;
+    background-color: var(--bg-white-color);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+#service-section p {
+    font-size: 12px;
+    font-weight: 500;
+}
+@media (min-width: 768px) {
+    #service-section .container {
+        display: grid;
+        height: 100%;
+        width: 100%;
+        margin: 1rem;
+        padding: 0 1rem;
+        gap: 1rem;
+    }
+    #service-section .content {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 7rem;
+    }
+    #service-section .service-item img {
+        width: 90%;
+        height: 180px;
+        object-fit: cover;
+    }
+    #service-section h3 span {
+        font-size: 28px;
+        font-weight: 700;
+    }
 }
 
 
-
-
-
+@media (min-width: 1400px) {
+    #service-section .content {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0 10rem;
+    }
+}
 
 #service-detail .container {
     gap: 0.5rem;
@@ -767,3 +822,97 @@ ul {
 
 
 
+/* About sida */
+#team-section {
+    background-color: var(--bg-white-color);
+    margin-bottom: 1rem;
+    height: 100%;
+}
+
+    #team-section .container {
+        gap: 0.5rem;
+        width: 600PX;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    #team-section .content > h2 {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--sub-color-3);
+        text-align: center;
+    }
+
+#team-section h3 span {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+    #team-section .team-members {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-bottom: 1rem;
+        gap: 30px;
+        text-align: center;
+    }
+
+    #team-section .team-member img {
+        width: 370px;
+        height: 370px;
+    }
+
+team-section h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 15px 20px 10px;
+}
+
+.team-member {
+    border-radius: 8px;
+    background-color: var(--bg-white-color);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    text-align: center;
+}
+
+#team-section p {
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    #team-section .container {
+        display: grid;
+        height: 100%;
+        width: 100%;
+        margin: 1rem;
+        padding: 0 1rem;
+        gap: 1rem;
+    }
+
+    #team-section .team-members {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 7rem;
+    }
+
+    #team-section .team-member img {
+        width: 90%;
+        height: auto;
+        object-fit: cover;
+
+    }
+
+    #team-section h3 span {
+        font-size: 28px;
+        font-weight: 700;
+    }
+}
+
+
+@media (min-width: 1400px) {
+    #team-section .team-members {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0 10rem;
+    }
+}
