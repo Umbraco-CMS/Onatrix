@@ -1,0 +1,39 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ContactUsSection)Model.Content;
+   
+}
+<section id="countactUs-section">
+    <div class="container">
+        <div class="images">
+            @if (content.ContactUsDotImage != null)
+            {
+                <img class="img-dot" src="@content.ContactUsDotImage.Url()" alt="Dot background">
+            }
+            @if (content.ContactUsBgImage != null)
+            {
+                <img class="img-bg" src="@content.ContactUsBgImage.Url()" alt="Background Image">
+            }
+            @if (content.ContactUsManImage != null)
+            {
+                <img class="img-man" src="@content.ContactUsManImage.Url()" alt="Man Image">
+            }
+        </div>
+        <div class="content">
+            <h1>@content.ContactUsTitile</h1>
+            <div class="contact-group">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>@Html.Raw(content.ContactUsLocation)</span>
+            </div>
+            <div class="contact-group">
+                <i class="fa-solid fa-phone-flip"></i>
+                <span>@Html.Raw(content.ContactUsPhone)</span>
+            </div>
+            <div class="contact-group">
+                <i class="fa-regular fa-envelope"></i>
+                <span>@Html.Raw(content.ContactUsEmail)</span>
+            </div>
+        </div>
+    </div>
+</section>

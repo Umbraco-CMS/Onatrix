@@ -511,7 +511,7 @@ ul {
         align-items: center;
         flex-direction: row;
         height: 100%;
-        width: 70%;
+        width: 90%;
         padding: 1rem;
         margin: 1rem;
     }
@@ -523,6 +523,9 @@ ul {
         justify-content: center;
         align-items: center;
         gap: 1rem;
+    }
+    #brand-5, #brand-6 {
+        display: none;
     }
 }
     /* Brand section för desktop  */
@@ -547,12 +550,13 @@ ul {
             justify-content: center;
             align-items: center;
         }
+        #brand-5, #brand-6 {
+            display: block;
+        }
     }
-    
-    
-    /* experience and form */
-#experience 
-{
+
+/* experience and form */
+#experience {
     display: block;
     padding: 0;
     height: 100%;
@@ -915,4 +919,139 @@ team-section h4 {
         grid-template-columns: repeat(3, 1fr);
         padding: 0 10rem;
     }
+}
+
+/* === Contact Us Section === */
+#countactUs-section {
+    width: 100%;
+    background: var(--bg-white-color);
+    padding: 4rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+    #countactUs-section .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        max-width: 1200px;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* === Images area === */
+    #countactUs-section .images {
+        position: relative;
+        width: 100%;
+        height: 600px;
+        max-width: 500px;
+        z-index: 1;
+    }
+
+
+        /* Dot background */
+        #countactUs-section .images .img-dot {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 90%;
+            height: 90%;
+            max-width: 350px;
+            opacity: 0.5;
+            z-index: 1;
+        }
+
+        /* Gray geometric shape */
+        #countactUs-section .images .img-bg {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            z-index: 2;
+        }
+
+        /* Man image (foreground) */
+        #countactUs-section .images .img-man {
+            position: absolute;
+            z-index: 3;
+            width: 90%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    /* === Text content === */
+    #countactUs-section .content {
+        text-align: center;
+        max-width: 500px;
+        z-index: 5;
+    }
+
+        #countactUs-section .content h1 {
+            font-size: 1.8rem;
+            color: var(--main-color);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+    #countactUs-section .contact-group {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+        margin-bottom: 1rem;
+        color: var(--body-color);
+        font-size: 14px;
+        font-weight: var(--font-semibold);
+    }
+    #countactUs-section p, span {
+        font-size: 14px;
+        font-weight: var(--font-semibold);
+    }
+
+    #countactUs-section .contact-group i {
+        color: var(--sub-color-3);
+        font-size: 1.2rem;
+        width: 16px;
+        height: 16px;
+    }
+
+
+/* Tablet  */
+@media (min-width: 768px) {
+    #countactUs-section .container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4rem;
+        padding: 2rem;
+    }
+    #countactUs-section .images {
+        max-width: 500px;
+    }
+
+
+    #countactUs-section .content {
+      
+        text-align: left;
+    }
+
+    #countactUs-section .contact-group {
+        justify-content: flex-start;
+    }
+
+}
+
+/* Desktop  */
+@media (min-width: 1200px) {
+    #countactUs-section {
+        padding: 6rem 2rem;
+    }
+
+        #countactUs-section .content h1 {
+            font-size: 2.2rem;
+        }
+
+        #countactUs-section .contact-group {
+            font-size: 1.1rem;
+        }
 }
