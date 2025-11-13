@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
     /* fonts */
@@ -459,7 +459,7 @@ ul {
         }
 
      }
-    /* Hero section f�r desktop  */
+    /* Hero section för desktop  */
     @media (min-width: 1400px) {
         #hero-section .container {
             display: flex;
@@ -498,7 +498,7 @@ ul {
     display: none;
    
 }
-/* Brand section f�r tablet  */
+/* Brand section för tablet  */
 @media (min-width: 768px) {
     #brands {
         display: block;
@@ -528,7 +528,7 @@ ul {
         display: none;
     }
 }
-    /* Brand section f�r desktop  */
+    /* Brand section för desktop  */
     @media (min-width: 1400px) {
         #brands {
             display: block;
@@ -823,8 +823,310 @@ ul {
     padding: 0 10rem;
 }
 
+/* === OUR STORY SECTION === */
+#our-story-section {
+    width: 100%;
+    background-color: var(--bg-white-color);
+    padding: 4rem 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+    #our-story-section .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* === Headline & Text === */
+    #our-story-section .headline h1 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--main-color);
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+
+    #our-story-section .headline p:first-of-type {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--sub-color-3);
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    #our-story-section .headline p:last-of-type {
+        font-size: 1rem;
+        color: #666;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        line-height: 1.6;
+    }
+
+    /* === Button === */
+    #our-story-section .headline .btn {
+        display: inline-block;
+        padding: 1rem;
+        color: var(--sub-color-1);
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-align: center;
+        align-items: center;
+        width:150px;
+        height:60px;
+    }
+
+        #our-story-section .headline .btn:hover {
+            background-color: var(--btn-gray-background-hover-color);
+            color: var(--white-100);
+        }
+
+    /* === Images === */
+    #our-story-section .images {
+        position: relative;
+        margin-top: 3rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+        #our-story-section .images img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Background world map image */
+        #our-story-section .images .img-back:first-of-type {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            opacity: 0.15;
+            z-index: 1;
+        }
+
+        /* Team image in front */
+        #our-story-section .images .img-back:last-of-type {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            width: 100%;
+        }
+
+/* === Responsive design === */
+
+/* Tablet */
+@media (min-width: 768px) {
+    #our-story-section {
+        padding: 6rem 2rem;
+    }
+
+        #our-story-section .headline h1 {
+            font-size: 2.2rem;
+        }
+
+        #our-story-section .headline p:first-of-type {
+            font-size: 1.8rem;
+        }
+
+        #our-story-section .headline p:last-of-type {
+            font-size: 1.1rem;
+        }
+
+        #our-story-section .images .img-back:last-of-type {
+            max-width: 800px;
+        }
+}
+
+/* Desktop */
+@media (min-width: 1400px) {
+    #our-story-section {
+        padding: 8rem 2rem;
+    }
+
+        #our-story-section .headline h1 {
+            font-size: 2.4rem;
+        }
+
+        #our-story-section .headline p:first-of-type {
+            font-size: 2rem;
+        }
+
+        #our-story-section .headline p:last-of-type {
+            font-size: 1.1rem;
+            max-width: 700px;
+        }
+
+        #our-story-section .images .img-back:last-of-type {
+            max-width: 1000px;
+        }
+}
+
+/* Sektionens */
+#success-story {
+    background-color: var(--bg-main-color);
+    padding: 0 1rem;
+    position: relative;
+}
+
+    #success-story .container {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        background-color: var(--bg-main-color);
+        position: relative;
+
+    }
+    #success-story .content {
+        margin: 0 auto;
+        gap: 2rem;
+        min-height: 280px;
+        z-index: 2;
+        position: relative;
+    }
+    #success-story .success-text {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        min-height: 180px;
+        width:600px;
+    }
+
+    #success-story .success-text .line {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 60px;
+        width: 200px;
+        gap: 1rem;
+    }
+    .line h1 {
+        color: var(--sub-color-3);
+    }
+
+    #success-story .content h6 {
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--sub-color-3);
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+
+        #success-story .content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--white-200);
+            text-align: center;
+        }
+
+    #success-story .line p {
+        font-size: 10px;
+        line-height: 1.6;
+        color: var(--white-200);
+        margin-bottom: 0.75rem;
+        width: 300px;
+        height: 50px;
+        text-align: center;
+    }
+
+    /* Bildcontainer */
+    #success-story .image {
+        position: absolute;
+        width: 100%;
+        min-height: 280px;
+        border-radius: 12px;
+        align-items: center;
+        justify-content: center;
+    }
+
+        /* Bakgrundsbild */
+    #success-story .img-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        object-fit: cover;
+        filter: brightness(0.8) contrast(1.05);
+        z-index: 1;
+        width: 1100px;
+        height: 500px;
+    }
+
+        /* Team-bild */
+    #success-story .image .img-team {
+        position: absolute;
+        width: 600px;
+        height: 500px;
+        margin: 0 auto;
+        border-radius: 16px;
+        z-index: 2;
+        transform: translateY(20px);
+
+    }
+
+        /* Mjuk overlay för läsbarhet */
+    #success-story .image::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+    }
+
+/* 📱 Responsiv layout */
+@media (min-width: 768px) {
+    #success-story .container {
+        align-items: center;
+        gap: 3rem;
+    }
 
 
+    #success-story .content {
+        flex: 1;
+    }
+    #success-story .image {
+        flex: 1;
+        min-height: 360px;
+    }
+
+    #success-story .content h2 {
+        font-size: 2.25rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    #success-story .content h2 {
+        font-size: 2.5rem;
+    }
+
+    #success-story .content p {
+        font-size: 12px;
+    }
+
+    #success-story .image .img-back:last-of-type {
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/* ------------------------------------------------------------------*/
 
 /* About sida */
 #team-section {
@@ -921,7 +1223,7 @@ team-section h4 {
     }
 }
 
-/* === Contact Us Section === */
+/* Contact Us Section */
 #countactUs-section {
     width: 100%;
     background: var(--bg-white-color);
@@ -1025,10 +1327,6 @@ team-section h4 {
         gap: 4rem;
         padding: 2rem;
     }
-    #countactUs-section .images {
-        max-width: 500px;
-    }
-
 
     #countactUs-section .content {
       

@@ -16,7 +16,7 @@
             <div class="headline">
                 <h1>@content.Title</h1>
             </div>
-            <span>@Html.Raw(content.Text)</span>
+            <p>@Html.Raw(content.Text)</p>
             @if (content.Link != null)
             {
                 <a class="link btn btn-gray" href="@content.Link.Url">@content.Link.Name</a>
