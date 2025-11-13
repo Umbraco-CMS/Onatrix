@@ -18,14 +18,14 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Form Submissions</summary>
-	[PublishedModel("formSubmissions")]
-	public partial class FormSubmissions : PublishedContentModel
+	/// <summary>Online Support</summary>
+	[PublishedModel("onlineSupport")]
+	public partial class OnlineSupport : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.4+0d2393d")]
-		public new const string ModelTypeAlias = "formSubmissions";
+		public new const string ModelTypeAlias = "onlineSupport";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.4+0d2393d")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.4+0d2393d")]
@@ -34,14 +34,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 			=> PublishedModelUtility.GetModelContentType(contentTypeCache, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.4+0d2393d")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<FormSubmissions, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<OnlineSupport, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(contentTypeCache), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public FormSubmissions(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+		public OnlineSupport(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -54,39 +54,31 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.4+0d2393d")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("formSubmissionsEmail")]
-		public virtual string FormSubmissionsEmail => this.Value<string>(_publishedValueFallback, "formSubmissionsEmail");
+		[ImplementPropertyType("onlineSupportEmail")]
+		public virtual string OnlineSupportEmail => this.Value<string>(_publishedValueFallback, "onlineSupportEmail");
 
 		///<summary>
-		/// Link
+		/// Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.4+0d2393d")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("formSubmissionsLink")]
-		public virtual global::Umbraco.Cms.Core.Models.Link FormSubmissionsLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "formSubmissionsLink");
+		[ImplementPropertyType("onlineSupportImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops OnlineSupportImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "onlineSupportImage");
 
 		///<summary>
-		/// Name
+		/// Text
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.4+0d2393d")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("formSubmissionsName")]
-		public virtual string FormSubmissionsName => this.Value<string>(_publishedValueFallback, "formSubmissionsName");
+		[ImplementPropertyType("onlineSupportText")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString OnlineSupportText => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "onlineSupportText");
 
 		///<summary>
-		///  Question
+		/// Tilte
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.4+0d2393d")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("formSubmissionsQuestion")]
-		public virtual string FormSubmissionsQuestion => this.Value<string>(_publishedValueFallback, "formSubmissionsQuestion");
-
-		///<summary>
-		/// Titlie
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.4+0d2393d")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("formSubmissionsTitlie")]
-		public virtual string FormSubmissionsTitlie => this.Value<string>(_publishedValueFallback, "formSubmissionsTitlie");
+		[ImplementPropertyType("onlineSupportTilte")]
+		public virtual string OnlineSupportTilte => this.Value<string>(_publishedValueFallback, "onlineSupportTilte");
 	}
 }

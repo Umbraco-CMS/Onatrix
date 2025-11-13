@@ -730,7 +730,7 @@ ul {
     
 /* service section */
 #service-section {
-    background-color: var(--bg-secondery-color);
+    background-color: var(--bg-white-color);
     margin-bottom: 1rem;
     height: 100%;
 }
@@ -772,7 +772,7 @@ ul {
 }
 .service-item {
     border-radius: 8px;
-    background-color: var(--bg-white-color);
+    background-color: var(--bg-secondery-color);
     transition: all 0.3s ease;
     overflow: hidden;
 }
@@ -1127,7 +1127,6 @@ ul {
 
 
 /* ------------------------------------------------------------------*/
-
 /* About sida */
 #team-section {
     background-color: var(--bg-white-color);
@@ -1226,8 +1225,8 @@ team-section h4 {
 /* Contact Us Section */
 #countactUs-section {
     width: 100%;
-    background: var(--bg-white-color);
-    padding: 4rem 1rem;
+    background: var(--bg-secondery-color);
+    padding: 0rem 1rem;
     display: flex;
     justify-content: center;
 }
@@ -1353,3 +1352,22 @@ team-section h4 {
             font-size: 1.1rem;
         }
 }
+
+#about-info-section {
+    background-color: var(--bg-white-color);
+    padding: 0rem 10rem;
+}
+
+#about-reviews-section {
+    background-color: var(--bg-secondery-color);
+    padding: 0rem 10rem;
+}
+
+    #about-reviews-section h6 {
+        color: var(--sub-color-3);
+    }
+
+    #about-reviews-section .img-review {
+        height: 300px;
+        width: 500px;
+    }

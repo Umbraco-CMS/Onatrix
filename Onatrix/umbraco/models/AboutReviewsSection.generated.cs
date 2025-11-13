@@ -18,14 +18,14 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Form Submissions</summary>
-	[PublishedModel("formSubmissions")]
-	public partial class FormSubmissions : PublishedContentModel
+	/// <summary>About Reviews Section</summary>
+	[PublishedModel("aboutReviewsSection")]
+	public partial class AboutReviewsSection : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.4+0d2393d")]
-		public new const string ModelTypeAlias = "formSubmissions";
+		public new const string ModelTypeAlias = "aboutReviewsSection";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.4+0d2393d")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.4+0d2393d")]
@@ -34,14 +34,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 			=> PublishedModelUtility.GetModelContentType(contentTypeCache, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.4+0d2393d")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<FormSubmissions, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<AboutReviewsSection, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(contentTypeCache), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public FormSubmissions(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+		public AboutReviewsSection(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -50,43 +50,59 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Email
+		/// Reviws
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.4+0d2393d")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("formSubmissionsEmail")]
-		public virtual string FormSubmissionsEmail => this.Value<string>(_publishedValueFallback, "formSubmissionsEmail");
+		[ImplementPropertyType("aboutReviws")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString AboutReviws => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "aboutReviws");
 
 		///<summary>
-		/// Link
+		/// Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.4+0d2393d")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("formSubmissionsLink")]
-		public virtual global::Umbraco.Cms.Core.Models.Link FormSubmissionsLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "formSubmissionsLink");
+		[ImplementPropertyType("aboutReviwsImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops AboutReviwsImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "aboutReviwsImage");
+
+		///<summary>
+		/// location
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.4+0d2393d")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("aboutReviwsLocation")]
+		public virtual string AboutReviwsLocation => this.Value<string>(_publishedValueFallback, "aboutReviwsLocation");
 
 		///<summary>
 		/// Name
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.4+0d2393d")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("formSubmissionsName")]
-		public virtual string FormSubmissionsName => this.Value<string>(_publishedValueFallback, "formSubmissionsName");
+		[ImplementPropertyType("aboutReviwsName")]
+		public virtual string AboutReviwsName => this.Value<string>(_publishedValueFallback, "aboutReviwsName");
 
 		///<summary>
-		///  Question
+		/// Text
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.4+0d2393d")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("formSubmissionsQuestion")]
-		public virtual string FormSubmissionsQuestion => this.Value<string>(_publishedValueFallback, "formSubmissionsQuestion");
+		[ImplementPropertyType("aboutReviwsText")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString AboutReviwsText => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "aboutReviwsText");
 
 		///<summary>
-		/// Titlie
+		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.4+0d2393d")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("formSubmissionsTitlie")]
-		public virtual string FormSubmissionsTitlie => this.Value<string>(_publishedValueFallback, "formSubmissionsTitlie");
+		[ImplementPropertyType("aboutReviwsTitle")]
+		public virtual string AboutReviwsTitle => this.Value<string>(_publishedValueFallback, "aboutReviwsTitle");
+
+		///<summary>
+		/// Title1
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.4+0d2393d")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("aboutReviwsTitle1")]
+		public virtual string AboutReviwsTitle1 => this.Value<string>(_publishedValueFallback, "aboutReviwsTitle1");
 	}
 }
