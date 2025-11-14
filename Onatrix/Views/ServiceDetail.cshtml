@@ -15,8 +15,10 @@
 			</aside>
 			<div class="content">
 				@Html.GetBlockListHtml(Model.Body)
-				@Html.GetBlockListHtml(Model.Sections)
+
 			</div>
+
 		</div>
 	</div>
 </section>
+@Html.GetBlockListHtml(Model.Sections)

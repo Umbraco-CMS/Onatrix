@@ -4,7 +4,7 @@
     var content = (ContentModels.ServiceDetailBody)Model.Content;
 }
 
-<div class="content">
+<section class="service-detail-body">
     @if (!string.IsNullOrEmpty(content.Title))
     {
         <h6>@content.Title</h6>
@@ -27,4 +27,4 @@
     }
     <p>@content.Text3</p> 
 
-</div>
+</section>

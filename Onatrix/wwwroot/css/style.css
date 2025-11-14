@@ -818,7 +818,7 @@ ul {
 }
 
 #service-detail .content {
-    width: 70%;
+
     margin-bottom: 3rem;
     padding: 0 10rem;
 }
@@ -1371,3 +1371,156 @@ team-section h4 {
         height: 300px;
         width: 500px;
     }
+/* -------------------------------------------------------------- */
+/* service detail page */
+
+#service-detail {
+    padding: 2rem 0;
+}
+
+    #service-detail .service-detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+/* ===== Aside ===== */
+.service-detail-aside {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+}
+
+    .service-detail-aside img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 6px;
+    }
+
+/* ===== Content ===== */
+#service-detail .content {
+    width: 100%;
+}
+
+    .service-detail .content h2,
+    .service-detail .content h6 {
+        margin: 1rem 0 0.5rem;
+    }
+
+    .service-detail .content p {
+        margin-bottom: 1.2rem;
+        line-height: 1.6;
+    }
+
+    .service-detail .content img {
+        width: 100%;
+        height: auto;
+        margin: 1.5rem 0;
+        border-radius: 6px;
+        object-fit: cover;
+    }
+
+/* ===== FORM ===== */
+.service-detail-aside form input,
+.service-detail-aside form button {
+    width: 100%;
+    padding: 0.7rem;
+    font-size: 1rem;
+}
+
+/* ===== Tablet breakpoint ===== */
+@media (min-width: 768px) {
+    .service-detail {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .service-detail-aside {
+        width: 30%; /* sidebar size */
+        position: sticky;
+        top: 1rem;
+    }
+
+    .service-detail .content {
+        width: 70%;
+    }
+}
+
+/* ===== Desktop ===== */
+@media (min-width: 1200px) {
+    .service-detail {
+        gap: 3rem;
+    }
+
+        .service-detail .content img {
+            max-width: 850px;
+        }
+}
+
+/* service detail body */
+
+
+.service-detail-body {
+    width: 100%;
+    font-family: inherit;
+    padding: 0rem 15rem;
+}
+
+    /* Headings */
+    .service-detail-body h6 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #444;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .service-detail-body h2 {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin: 1.5rem 0 0.5rem;
+        color: #222;
+    }
+
+    /* Paragraphs */
+    .service-detail-body p {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 1.2rem;
+        color: #555;
+    }
+
+    /* Images */
+    .service-detail-body img {
+        width: 100%;
+        height: auto;
+        margin: 1.5rem 0;
+        border-radius: 6px;
+        display: block;
+        object-fit: cover;
+    }
+
+/* ===== TABLET (Layout stays similar, just cleaner spacing) ===== */
+@media (min-width: 768px) {
+    .service-detail-body h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 1200px) {
+    .service-detail-body {
+        max-width: 850px; /* aligns with your design */
+    }
+
+        .service-detail-body h2 {
+            font-size: 2rem;
+        }
+
+        .service-detail-body p {
+            font-size: 1.05rem;
+        }
+}
